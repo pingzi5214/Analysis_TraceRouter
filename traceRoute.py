@@ -84,6 +84,7 @@ class Telnet(object):
                 i = self.access.expect([r'%s' % self.moreFlag, self.endFlag], timeout=10)
                 # Get result
                 temp = i[-1]
+		# 去除影响的部分
                 temp = temp.replace(' --More--', '')
                 temp = temp.replace(' --More-', '')
                 temp = temp.replace('-', '')
@@ -107,9 +108,8 @@ class Telnet(object):
 
 
 sssssssssss = datetime.datetime.now()
-# HK-HKG-CW-G-1.163	Cisco	ASR1006	202.97.32.11
 
-device = Telnet(device_name='202.97.32.11', username='tier1_Chauhb', password='tier1@2017')
+device = Telnet(device_name='device_ip', username='xxxxxxxxxxxxxxxxxxxxx', password='xxxxxxxxxxxxxxxxxxxxx')
 if device.connect():
     device.command('show bgp')
     device.close()
@@ -133,9 +133,6 @@ findIp_group = open('show_bgp_2.log', 'w')
 while True:
     line = f.readline()
     if line:
-        #      Network          Next Hop            Metric LocPrf Weight Path
-        # *>i 1.0.4.0/24       118.84.123.23            0    500      0 174 4826 38803 56203 i
-        # * i                  118.84.123.23            0    500      0 174 4826 38803 56203 i
         # 查看当前行和下一行是否关联
         relgx = r' *(>| )i (\d+).(\d+).(\d+).(\d+)/(\d+)\n'
         findRelgx = re.findall(relgx, line)
@@ -169,7 +166,7 @@ findIp_group.close()
 
 f = open('show_bgp_2.log', 'r')
 ff = open('show_bgp_3.log', 'w')
-conn = cx_Oracle.connect('inms/inms@137.128.19.107/ctginms')  # 用自己的实际数据库用户名、密码、主机ip地址 替换即可
+conn = cx_Oracle.connect('xxxx/xxxx@IP_Address/xxxxxxx')  # 用自己的实际数据库用户名、密码、主机ip地址 替换即可
 curs = conn.cursor()
 list_line = list()
 try:
