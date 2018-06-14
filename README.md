@@ -6,7 +6,6 @@
 在设备上执行show bgp的命令，解析出每段Network中最优的Next Hop的值，
 机器返回信息如下所示。
 
-Network          Next Hop            Metric LocPrf Weight Path
-
-  *>i x.x.x.x/24   xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
-  /* i              xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
+* Network          Next Hop            Metric LocPrf Weight Path
+ > *>i x.x.x.x/24   xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
+ > * i              xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
