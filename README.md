@@ -8,4 +8,4 @@
 Network          Next Hop            Metric LocPrf Weight Path
 
   *>i x.x.x.x/24   xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
-  * i              xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
+  /* i              xxx.xxx.xxx.xxx      0     xxx      0     xxxxxxxxxxxxxxxx
